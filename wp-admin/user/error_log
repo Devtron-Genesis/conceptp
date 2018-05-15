@@ -1,0 +1,2 @@
+[25-Nov-2017 02:00:05 UTC] PHP Fatal error:  Call to undefined function __() in /home/conceptp/public_html/wp-admin/user/menu.php on line 10
+[25-Nov-2017 02:07:12 UTC] PHP Fatal error:  Call to undefined function __() in /home/conceptp/public_html/wp-admin/user/menu.php on line 10

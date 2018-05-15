@@ -1,0 +1,98 @@
+<!doctype html>
+<html <?php language_attributes(); ?>>
+
+<head>
+
+<meta charset="utf-8">
+<title><?php
+// Display the page title based on what is being displayed.
+global $page, $paged;
+
+wp_title( '|', true, 'right' );
+
+// Add the blog name.
+bloginfo( 'name' );
+
+// Add the blog description for the home/front page.
+$site_description = get_bloginfo( 'description', 'display' );
+if ( $site_description && ( is_home() || is_front_page() ) )
+	echo " | $site_description";
+
+// Add a page number if necessary:
+if ( $paged >= 2 || $page >= 2 )
+	echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
+
+?></title>
+<meta name="description" content="Concept Products is a wholly owned Australian company with more than 40 years combined experience of providing specialist timber and building products to the building industries in Australia.">
+<meta name="author" content="Tim Martin">
+
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/normalize.css" media="all">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" media="all">
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/flux.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<?php wp_head(); ?>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31740332-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<link rel="publisher" href="https://plus.google.com/+ConceptproductsAu">
+
+</head>
+
+<body <?php body_class($class); ?>>
+
+<div id="header">
+
+	<div class="wrap">
+
+		<?php query_posts('page_id=1259'); ?>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<p class="tagline floatr"><?php echo get_the_content(); ?></p>
+		<?php endwhile; endif; ?>
+		<?php wp_reset_query(); ?>
+
+		<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.jpg" alt="Concept Products" /></a>
+
+		<div class="clr"></div>
+
+	</div>
+
+</div>
+
+<div id="navigation">
+
+	<div class="wrap">
+
+		<ul>
+			<li><a href="<?php echo site_url(); ?>">Home</a></li>
+			<li><a href="<?php echo get_permalink(1240); ?>">Doors &amp; Doorway Solutions</a></li>
+			<li><a href="<?php echo get_permalink(173); ?>">Millboard Decking</a></li>
+			<li><a href="<?php echo get_permalink(21); ?>">Gallery</a></li>
+			<li><a href="<?php echo get_permalink(8); ?>">About Us</a></li>
+			<li class="last"><a href="<?php echo get_permalink(18); ?>">Contact Us</a></li>
+		</ul>
+
+	</div>
+
+</div>

@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".slick").slick({arrows:!0,dots:!0,infinite:!0,speed:500,fade:!1,autoplay:!0,autoplaySpeed:3e3,slide:"div.slide",cssEase:"linear",nextArrow:'<div class="slick-arrow slick-next"><i class="fa fa-chevron-circle-right"></i></button>',prevArrow:'<div class="slick-arrow slick-prev"><i class="fa fa-chevron-circle-left"></i></button>'})});

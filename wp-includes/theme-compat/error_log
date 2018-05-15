@@ -1,0 +1,1 @@
+[15-Feb-2018 01:30:45 UTC] PHP Fatal error:  Call to undefined function post_class() in /home/conceptp/public_html/wp-includes/theme-compat/embed-content.php on line 13

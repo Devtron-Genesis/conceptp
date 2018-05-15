@@ -1,0 +1,55 @@
+<div id="orange-area">
+
+	<div class="wrap">
+
+		<?php query_posts('page_id=1263'); ?>
+
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php
+
+        $attachments = get_posts( array(
+            'post_type' => 'attachment',
+            'posts_per_page' => -1,
+            'post_parent' => $post->ID,
+            'posts_per_page' => 100,
+            'orderby' => 'menu_order',
+            'order' => 'ASC'
+        ));
+
+        ?>
+
+        <?php if ($attachments) : ?>
+        <div id="slider">
+            <?php foreach ($attachments as $attachment) : ?>
+                <?php $full = wp_get_attachment_image_src( $attachment->ID, 'full', true ); ?>
+                <img src="<?php echo $full[0]; ?>" alt="Slider">
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+
+		<?php endwhile; endif; ?>
+
+		<?php wp_reset_query(); ?>
+
+		<!--<div class="row">
+
+			<div class="six columns" style="padding-right: 20px">
+
+				<a href="<?php echo get_permalink(1240); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/btn1.png" alt=""></a>
+
+			</div>
+
+			<div class="six columns" style="text-align: right;">
+
+				<a href="<?php echo get_permalink(173); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/btn2.png" alt=""></a>
+
+			</div>
+
+			<div class="clear"></div>
+
+		</div>-->
+
+	</div>
+
+</div>
